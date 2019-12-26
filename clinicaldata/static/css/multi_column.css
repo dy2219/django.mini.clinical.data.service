@@ -1,0 +1,21 @@
+
+div.user-icon-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 70%;
+}
+
+div#side-box.body-item {
+   width: 20%;
+   padding: 4pt;
+   margin: 4pt;
+   border: solid thin #dddddd;
+}
+
+div#main-box.body-item {
+   width: 80%;
+}
+

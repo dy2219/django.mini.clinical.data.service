@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/base.css' %}"/>
+        {% block csslink %}
+        {% endblock %}
+    </head>
+    <body>
+         <div class="multi-column-box" id="head-bar">
+             <div class="head-bar-item" id="logo">
+                 <img src="{% static '/logo.svg' %}"></img>
+             </div>
+             <div class="head-bar-item" id="home">
+                 <a href="/">Home</a>
+             </div>
+             <div class="head-bar-item" id="view-data">
+                 <a href="/view-data">View Data</a>
+             </div>
+             <div class="head-bar-item" id="add-data">
+                 <a href="/add-data">Add Data</a>
+             </div>
+             <div class="head-bar-item" id="Switch User">
+                 <a href="/accounts/login">Switch User</a>
+             </div>
+         </div>
+
+         {% block mainbody %}
+         {% endblock %}
+    </body>
+</html>

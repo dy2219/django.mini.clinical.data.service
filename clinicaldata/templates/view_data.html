@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block csslink %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/view_data.css' %}"/>
+{% endblock %}
+
+{% block mainbody %}
+
+<div class="multi-column-box" id="body">
+    <div class="body-item" id="side-box">
+        <h3>Welcome {{user}}</h3>
+        <div class="user-icon-image">
+            <img src="{% static user_icon %}" width="50%"></img>
+        </div>
+        You have signed in
+        <ul>
+            <li> as: {{user}}</li>
+            <li> from: {{client_ip}}</li>
+            <li> using: {{browser_type}}</li>
+        </ul>
+    </div>
+    <div class="body-item" id="main-box">
+    <h2> View Data </h2>
+
+    <h2> Patients Data List </h2>
+    <div id="patient-list">
+        <table>
+        <tr>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Gender </th>
+            <th> Date of Birth </th>
+            <th> Tel. Nr </th>
+            <th> Height (cm) </th>
+            <th> Weight (kg) </th>
+            <th> Study Nurse </th>
+        </tr>
+        {% for patient in patient_list %}
+        <tr>
+            <td> {{patient.first_name}} </td>
+            <td> {{patient.last_name}} </td>
+            <td> {{patient.gender}} </td>
+            <td> {{patient.birth}} </td>
+            <td> {{patient.phone_number}} </td>
+            <td> {{patient.height}} </td>
+            <td> {{patient.weight}} </td>
+            <td> {{patient.study_nurse_name}} </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+@import "multi_column.css";
+
+li.error-message {
+    color: #ff0000;
+}

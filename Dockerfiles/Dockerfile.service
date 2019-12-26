@@ -1,0 +1,12 @@
+FROM python:3.8
+
+### setup environment
+RUN mkdir /clinical-data-service
+WORKDIR /clinical-data-service
+COPY . .
+RUN ls -lahtr; \
+    pwd; \
+    pip3 install -r requirements.txt
+
+### start server
+ENTRYPOINT python3 clinicaldata/manage.py runserver 0.0.0.0:8000

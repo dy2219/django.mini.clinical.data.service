@@ -1,0 +1,35 @@
+* {
+   background-color: #f0f0f0;
+   color: #000000;
+}
+
+a {
+   color: #0000ff;
+}
+
+div.multi-column-box {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+}
+
+div#logo.head-bar-item {
+   width: 40%;
+   margin-left: 0pt;
+   padding-left: 0pt;
+   background-color: #f0f0f0;
+}
+
+div.head-bar-item {
+   width: 15%;
+   background-color: #ffffff;
+   margin-left: 4pt;
+   margin-right: 4pt;
+   padding-left: 8pt;
+   padding-right: 8pt;
+}
+
+div.head-bar-item a{
+   background-color: #ffffff;
+}
+

@@ -1,0 +1,11 @@
+@import "multi_column.css";
+
+div#patient-list table{
+    background-color: #cccccc;
+}
+
+div#patient-list td,th{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block csslink %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/add_data.css' %}"/>
+{% endblock %}
+
+{% block mainbody %}
+
+<div class="multi-column-box" id="body">
+    <div class="body-item" id="side-box">
+        <h3>Welcome {{user}}</h3>
+        <div class="user-icon-image">
+            <img src="{% static user_icon %}" width="50%"></img>
+        </div>
+        You have signed in
+        <ul>
+            <li> as: {{user}}</li>
+            <li> from: {{client_ip}}</li>
+            <li> using: {{browser_type}}</li>
+        </ul>
+    </div>
+    <div class="body-item" id="main-box">
+        <h2> Add Data </h2>
+
+        {% if state == "SUCCESS" %}
+            <h2> DATA ADDED SUCCESSFULLY </h2>
+            <a href="/view-data"> View Data </a>
+            &nbsp &nbsp
+            <a href="/add-data"> Add New Data </a>
+        {% endif %}
+
+        {% if state == "NEW" %}
+            <form action="/add-data/" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+        {% endif %}
+
+        {% if state == "ERROR" %}
+            <h2> ERROR IN DATA </h2>
+            <ul class="error-message">
+                {% for e in error_message %}
+                    <li class="error-message"> {{e}} </li>
+                {% endfor %}
+            </ul>
+            <p> Please click "back" in your browser and edit the data again.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
